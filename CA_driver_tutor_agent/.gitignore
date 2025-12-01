@@ -1,0 +1,24 @@
+# --- Security (NEVER COMMIT THESE) ---
+.env
+.env.local
+secrets.json
+service_account.json
+credentials.json
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Environments ---
+.venv/
+venv/
+env/
+.uv/
+
+# --- OS Metadata ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
