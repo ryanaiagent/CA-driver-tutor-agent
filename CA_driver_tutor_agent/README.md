@@ -1,4 +1,4 @@
-# 🚗 California Driver's Prep Agent
+# 🚗 California Driver's Tutor Agent
 
 > **A Multi-Agent System powered by Google ADK, Vertex AI Agent Engine, and RAG.**
 
@@ -35,3 +35,71 @@ This agent acts as an intelligent **Driving Exam Tutor**. It doesn't just chat; 
 *   Google Cloud Project with Vertex AI API enabled.
 *   A Vertex AI RAG Corpus (California Handbook PDF indexed).
 *   A Youtube data api key
+
+## 2. Install uv (if not installed)
+pip install uv
+
+## Create and activate
+* uv venv --python 3.12
+* source .venv/bin/activate
+
+## 3. Install Dependencies
+* Install the required Python libraries from requirements.txt
+
+## 4.Configure Environment
+This project uses a .env file to manage secrets. 
+Create a file named .env in the root directory.
+Copy and paste the following configuration:
+code
+* # Google Cloud Configuration
+GOOGLE_CLOUD_PROJECT=your-project-id-here
+GOOGLE_CLOUD_REGION=your-location
+
+* # Vertex AI RAG Corpus ID
+* # Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}
+RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
+
+* # YouTube Data API Key (For video search tool)
+YOUTUBE_API_KEY=Your Key Here
+
+* ## Usage
+Once the environment is configured, run the main orchestrator script:
+
+python3 main.py
+* ## What to Expect:
+* The agent will initialize and connect to Vertex AI.
+* It will automatically "Wake Up" and introduce itself:
+"I am your Driving Exam Tutor. I can help you study by explaining specific rules, finding instructional videos, or taking a practice quiz."
+* You can type quiz to start a practice session, or ask questions directly (e.g., "How do I parallel park?").
+* Type exit or quit to stop the session.
+
+* ## Demo Script (For Judges)
+Follow this flow to demonstrate all capabilities:
+* 1. The Setup
+Tutor: "I am your Driving Exam Tutor... How would you like to proceed?"
+You: "I want to take a quiz."
+Tutor: "How many questions?"
+You: "3"
+Tutor: "What topic?"
+You: "Parking rules."
+* 2. The RAG & Logic
+Tutor: (Asks a specific question about colored curbs based on the PDF).
+You: (Answer correctly).
+Tutor: (Confirms and tracks score).
+* 3. The Visual Aid (YouTube)
+Tutor: (Asks about Parallel Parking).
+You: "I honestly don't understand how to do that."
+Tutor: (Detects confusion -> Calls YouTube Tool -> Displays video link).
+* 4. The Completion
+You: (Finish the 3rd question).
+Tutor: "Batch Complete. Your score is 3/3. Would you like to start the next set?"
+
+* ## Project Structure
+Text
+├── agent.py           # Core Logic: Agent definitions, Tools, and Config
+├── main.py            # Orchestrator: Async Runner loop & Event Handling
+├── rag_prompt.txt     # System Prompt for the RAG Sub-Agent
+├── root_prompt.txt    # System Prompt for the Main Tutor Agent
+├── requirements.txt   # List of Python dependencies
+├── .env               # API Keys (Excluded from Git)
+└── README.md          # Project Documentation
