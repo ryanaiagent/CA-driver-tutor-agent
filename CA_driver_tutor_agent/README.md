@@ -21,7 +21,7 @@ The project leverages the **Vertex AI Agent Engine** and the **Google ADK** to o
 
 **A. Architecture Diagram**
 
-![A diagram showing the multi-agent architecture with RAG and YouTube tools.]()
+![A diagram showing the multi-agent architecture with RAG and YouTube tools.](https://github.com/ryanaiagent/CA-driver-tutor-agent/blob/main/CA_driver_tutor_agent/assets/Architectural%20diagram.png)
 
 **B. Multi-Agent Design (The "Agent Tool" Pattern)**
 To ensure accuracy, I separated the system into two distinct agents...
@@ -37,8 +37,6 @@ To ensure accuracy, I separated the system into two distinct agents...
     *   `vertexai.preview.rag` (Knowledge Base)
 
 ---
-
-
 
 ## 🚀 Setup & Installation
 
