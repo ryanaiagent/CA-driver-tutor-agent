@@ -16,6 +16,16 @@ This agent acts as an intelligent **Driving Exam Tutor**. It doesn't just chat; 
 *   **📊 State Management:** Tracks quiz scores and "Batch Logic" (e.g., sets of 5 questions) using in-memory session persistence.
 
 ---
+###  Technical Architecture
+The project leverages the **Vertex AI Agent Engine** and the **Google ADK** to orchestrate a robust Agent-to-Agent (A2A) workflow.
+
+**A. Architecture Diagram**
+
+![A diagram showing the multi-agent architecture with RAG and YouTube tools.]()
+
+**B. Multi-Agent Design (The "Agent Tool" Pattern)**
+To ensure accuracy, I separated the system into two distinct agents...
+
 
 ## 🛠️ Tech Stack
 
@@ -27,6 +37,8 @@ This agent acts as an intelligent **Driving Exam Tutor**. It doesn't just chat; 
     *   `vertexai.preview.rag` (Knowledge Base)
 
 ---
+
+
 
 ## 🚀 Setup & Installation
 
