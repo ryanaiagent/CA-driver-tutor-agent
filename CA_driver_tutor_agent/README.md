@@ -46,28 +46,32 @@ To ensure accuracy, I separated the system into two distinct agents...
 *   A Vertex AI RAG Corpus (California Handbook PDF indexed).
 *   A Youtube data api key
 
-## 2. Install uv (if not installed)
-* pip install uv
-* Create and activate
-* uv venv --python 3.12
-* source .venv/bin/activate
+### 2. Install uv (if not installed)
+pip install uv\
+Create and activate\
+uv venv --python 3.12\
+source .venv/bin/activate
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 * Install the required Python libraries from requirements.txt
 
-## 4.Configure Environment
-This project uses a .env file to manage secrets. 
-Create a file named .env in the root directory.
-Copy and paste the following configuration:
-* Google Cloud Configuration
-* GOOGLE_CLOUD_PROJECT=your-project-id-here
-* GOOGLE_CLOUD_REGION=your-location
-* Vertex AI RAG Corpus ID\
-  Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}\
-  eg: RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
+### 4.Configure Environment
+This project uses a .env file to manage secrets.\
+Create a file named .env in the root directory.\
+Copy and paste the following configuration:\
+
+Google Cloud Configuration\
+GOOGLE_CLOUD_PROJECT=your-project-id-here\
+GOOGLE_CLOUD_REGION=your-location\
+
+Vertex AI RAG Corpus ID\
+Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}\
+eg: RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
 
 * YouTube Data API Key (For video search tool)
 YOUTUBE_API_KEY=Your Key Here
+
+---
 
 * ## Usage
 Once the environment is configured, run the main orchestrator script:
@@ -105,6 +109,7 @@ Tutor: (Detects confusion -> Calls YouTube Tool -> Displays video link).\
 You: (Finish the 3rd question).\
 Tutor: "Batch Complete. Your score is 3/3. Would you like to start the next set?"
 
+---
 * ## Project Structure
 ```text
 kaggle-driver-agent/
