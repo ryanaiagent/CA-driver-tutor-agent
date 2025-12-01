@@ -37,9 +37,8 @@ This agent acts as an intelligent **Driving Exam Tutor**. It doesn't just chat; 
 *   A Youtube data api key
 
 ## 2. Install uv (if not installed)
-pip install uv
-
-## Create and activate
+* pip install uv
+* Create and activate
 * uv venv --python 3.12
 * source .venv/bin/activate
 
@@ -51,15 +50,15 @@ This project uses a .env file to manage secrets.
 Create a file named .env in the root directory.
 Copy and paste the following configuration:
 code
-* # Google Cloud Configuration
+* Google Cloud Configuration
 GOOGLE_CLOUD_PROJECT=your-project-id-here
 GOOGLE_CLOUD_REGION=your-location
 
-* # Vertex AI RAG Corpus ID
-* # Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}
+* Vertex AI RAG Corpus ID
+*  Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}
 RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
 
-* # YouTube Data API Key (For video search tool)
+* YouTube Data API Key (For video search tool)
 YOUTUBE_API_KEY=Your Key Here
 
 * ## Usage
@@ -96,10 +95,10 @@ Tutor: "Batch Complete. Your score is 3/3. Would you like to start the next set?
 
 * ## Project Structure
 Text
-├── agent.py           # Core Logic: Agent definitions, Tools, and Config
-├── main.py            # Orchestrator: Async Runner loop & Event Handling
-├── rag_prompt.txt     # System Prompt for the RAG Sub-Agent
-├── root_prompt.txt    # System Prompt for the Main Tutor Agent
-├── requirements.txt   # List of Python dependencies
-├── .env               # API Keys (Excluded from Git)
-└── README.md          # Project Documentation
+* ├── agent.py           # Core Logic: Agent definitions, Tools, and Config
+* ├── main.py            # Orchestrator: Async Runner loop & Event Handling
+* ├── rag_prompt.txt     # System Prompt for the RAG Sub-Agent
+* ├── root_prompt.txt    # System Prompt for the Main Tutor Agent
+* ├── requirements.txt   # List of Python dependencies
+* ├── .env               # API Keys (Excluded from Git)
+* └── README.md          # Project Documentation
