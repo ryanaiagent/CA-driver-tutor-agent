@@ -59,14 +59,12 @@ To ensure accuracy, I separated the system into two distinct agents...
 This project uses a .env file to manage secrets. 
 Create a file named .env in the root directory.
 Copy and paste the following configuration:
-code
 * Google Cloud Configuration
-GOOGLE_CLOUD_PROJECT=your-project-id-here
-GOOGLE_CLOUD_REGION=your-location
-
+* GOOGLE_CLOUD_PROJECT=your-project-id-here
+* GOOGLE_CLOUD_REGION=your-location
 * Vertex AI RAG Corpus ID
-*  Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}
-RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
+  Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}
+  RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
 
 * YouTube Data API Key (For video search tool)
 YOUTUBE_API_KEY=Your Key Here
