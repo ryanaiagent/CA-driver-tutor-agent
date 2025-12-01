@@ -47,70 +47,71 @@ To ensure accuracy, I separated the system into two distinct agents...
 *   A Youtube data api key
 
 ### 2. Install uv (if not installed)
-pip install uv\
-Create and activate\
-uv venv --python 3.12\
-source .venv/bin/activate
+*   pip install uv\
+*   create and activate\
+*   uv venv --python 3.12\
+*   source .venv/bin/activate
 
 ### 3. Install Dependencies
-* Install the required Python libraries from requirements.txt
+*   Install the required Python libraries from requirements.txt
 
 ### 4.Configure Environment
-This project uses a .env file to manage secrets.\
-Create a file named .env in the root directory.\
-Copy and paste the following configuration:\
+    This project uses a .env file to manage secrets.\
+    Create a file named .env in the root directory.\
+    Copy and paste the following configuration:\
 
-Google Cloud Configuration\
-GOOGLE_CLOUD_PROJECT=your-project-id-here\
-GOOGLE_CLOUD_REGION=your-location\
+*   Google Cloud Configuration\
+*   GOOGLE_CLOUD_PROJECT=your-project-id-here\
+*   GOOGLE_CLOUD_REGION=your-location\
 
-Vertex AI RAG Corpus ID\
-Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}\
-eg: RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
+*   Vertex AI RAG Corpus ID\
+    Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}\
+    eg: RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
 
-* YouTube Data API Key (For video search tool)
-YOUTUBE_API_KEY=Your Key Here
+*   YouTube Data API Key (For video search tool)\
+    YOUTUBE_API_KEY=Your Key Here
 
 ---
 
-* ## Usage
-Once the environment is configured, run the main orchestrator script:
+## Usage
+*   Once the environment is configured, run the main orchestrator script:
+*   python3 main.py
 
-python3 main.py
-* ## What to Expect:
-* The agent will initialize and connect to Vertex AI.
-* It will automatically "Wake Up" and introduce itself:\
-"I am your Driving Exam Tutor. I can help you study by explaining specific rules, finding instructional videos, or taking a practice quiz."
-* You can type quiz to start a practice session, or ask questions directly (e.g., "How do I parallel park?").
-* Type exit or quit to stop the session.
+## What to Expect:
+*   The agent will initialize and connect to Vertex AI.
+*   It will automatically "Wake Up" and introduce itself:\
+    "I am your Driving Exam Tutor. I can help you study by explaining specific rules, finding instructional videos, or taking a practice quiz."
+*   You can type quiz to start a practice session, or ask questions directly (e.g., "How do I parallel park?").
+*   Type exit or quit to stop the session.
 
-* ## Demo Script (For Judges)
-Follow this flow to demonstrate all capabilities:
+## Demo Script (For Judges)
+   Follow this flow to demonstrate all capabilities:
 
 *  The Setup\
-Tutor: "I am your Driving Exam Tutor... How would you like to proceed?" \
-You: "I want to take a quiz."\
-Tutor: "How many questions?"\
-You: "3"\
-Tutor: "What topic?"\
-You: "Parking rules."\
+    Tutor: "I am your Driving Exam Tutor... How would you like to proceed?" \
+    You: "I want to take a quiz."\
+    Tutor: "How many questions?"\
+    You: "3"\
+    Tutor: "What topic?"\
+    You: "Parking rules."\
 
 *  The RAG & Logic\
-Tutor: (Asks a specific question about colored curbs based on the PDF).\
-You: (Answer correctly).\
-Tutor: (Confirms and tracks score).\
+    Tutor: (Asks a specific question about colored curbs based on the PDF).\
+    You: (Answer correctly).\
+    Tutor: (Confirms and tracks score).\
 
 *  The Visual Aid (YouTube)\
-Tutor: (Asks about Parallel Parking).\
-You: "I honestly don't understand how to do that."\
-Tutor: (Detects confusion -> Calls YouTube Tool -> Displays video link).\
+    Tutor: (Asks about Parallel Parking).\
+    You: "I honestly don't understand how to do that."\
+    Tutor: (Detects confusion -> Calls YouTube Tool -> Displays video link).\
 
 *  The Completion\
-You: (Finish the 3rd question).\
-Tutor: "Batch Complete. Your score is 3/3. Would you like to start the next set?"
+    You: (Finish the 3rd question).\
+    Tutor: "Batch Complete. Your score is 3/3. Would you like to start the next set?"
 
 ---
-* ## Project Structure
+
+## Project Structure
 ```text
 kaggle-driver-agent/
 ├── .env               # API Keys (Excluded from Git)
