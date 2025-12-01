@@ -64,7 +64,7 @@ Copy and paste the following configuration:
 * GOOGLE_CLOUD_REGION=your-location
 * Vertex AI RAG Corpus ID
   Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}
-  RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
+  eg: RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
 
 * YouTube Data API Key (For video search tool)
 YOUTUBE_API_KEY=Your Key Here
@@ -75,30 +75,34 @@ Once the environment is configured, run the main orchestrator script:
 python3 main.py
 * ## What to Expect:
 * The agent will initialize and connect to Vertex AI.
-* It will automatically "Wake Up" and introduce itself:
+* It will automatically "Wake Up" and introduce itself:\
 "I am your Driving Exam Tutor. I can help you study by explaining specific rules, finding instructional videos, or taking a practice quiz."
 * You can type quiz to start a practice session, or ask questions directly (e.g., "How do I parallel park?").
 * Type exit or quit to stop the session.
 
 * ## Demo Script (For Judges)
 Follow this flow to demonstrate all capabilities:
-* 1. The Setup
-Tutor: "I am your Driving Exam Tutor... How would you like to proceed?"
-You: "I want to take a quiz."
-Tutor: "How many questions?"
-You: "3"
-Tutor: "What topic?"
-You: "Parking rules."
-* 2. The RAG & Logic
-Tutor: (Asks a specific question about colored curbs based on the PDF).
-You: (Answer correctly).
-Tutor: (Confirms and tracks score).
-* 3. The Visual Aid (YouTube)
-Tutor: (Asks about Parallel Parking).
-You: "I honestly don't understand how to do that."
-Tutor: (Detects confusion -> Calls YouTube Tool -> Displays video link).
-* 4. The Completion
-You: (Finish the 3rd question).
+
+* 1. The Setup\
+Tutor: "I am your Driving Exam Tutor... How would you like to proceed?" \
+You: "I want to take a quiz."\
+Tutor: "How many questions?"\
+You: "3"\
+Tutor: "What topic?"\
+You: "Parking rules."\
+
+* 2. The RAG & Logic\
+Tutor: (Asks a specific question about colored curbs based on the PDF).\
+You: (Answer correctly).\
+Tutor: (Confirms and tracks score).\
+
+* 3. The Visual Aid (YouTube)\
+Tutor: (Asks about Parallel Parking).\
+You: "I honestly don't understand how to do that."\
+Tutor: (Detects confusion -> Calls YouTube Tool -> Displays video link).\
+
+* 4. The Completion\
+You: (Finish the 3rd question).\
 Tutor: "Batch Complete. Your score is 3/3. Would you like to start the next set?"
 
 * ## Project Structure
