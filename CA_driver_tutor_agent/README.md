@@ -62,8 +62,8 @@ Copy and paste the following configuration:
 * Google Cloud Configuration
 * GOOGLE_CLOUD_PROJECT=your-project-id-here
 * GOOGLE_CLOUD_REGION=your-location
-* Vertex AI RAG Corpus ID
-  Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}
+* Vertex AI RAG Corpus ID\
+  Format: projects/{PROJECT_NUMBER}/locations/{REGION}/ragCorpora/{CORPUS_ID}\
   eg: RAG_CORPUS_NAME=projects/123456789/locations/your-location/ragCorpora/987654321
 
 * YouTube Data API Key (For video search tool)
@@ -83,7 +83,7 @@ python3 main.py
 * ## Demo Script (For Judges)
 Follow this flow to demonstrate all capabilities:
 
-* 1. The Setup\
+*  The Setup\
 Tutor: "I am your Driving Exam Tutor... How would you like to proceed?" \
 You: "I want to take a quiz."\
 Tutor: "How many questions?"\
@@ -91,26 +91,29 @@ You: "3"\
 Tutor: "What topic?"\
 You: "Parking rules."\
 
-* 2. The RAG & Logic\
+*  The RAG & Logic\
 Tutor: (Asks a specific question about colored curbs based on the PDF).\
 You: (Answer correctly).\
 Tutor: (Confirms and tracks score).\
 
-* 3. The Visual Aid (YouTube)\
+*  The Visual Aid (YouTube)\
 Tutor: (Asks about Parallel Parking).\
 You: "I honestly don't understand how to do that."\
 Tutor: (Detects confusion -> Calls YouTube Tool -> Displays video link).\
 
-* 4. The Completion\
+*  The Completion\
 You: (Finish the 3rd question).\
 Tutor: "Batch Complete. Your score is 3/3. Would you like to start the next set?"
 
 * ## Project Structure
-Text
-* ├── agent.py           # Core Logic: Agent definitions, Tools, and Config
-* ├── main.py            # Orchestrator: Async Runner loop & Event Handling
-* ├── rag_prompt.txt     # System Prompt for the RAG Sub-Agent
-* ├── root_prompt.txt    # System Prompt for the Main Tutor Agent
-* ├── requirements.txt   # List of Python dependencies
-* ├── .env               # API Keys (Excluded from Git)
-* └── README.md          # Project Documentation
+```text
+kaggle-driver-agent/
+├── .env               # API Keys (Excluded from Git)
+├── .gitignore         # Tells Git which files to ignore
+├── agent.py           # Core Logic: Agent definitions, Tools, and Config
+├── main.py            # Orchestrator: Async Runner loop & Event Handling
+├── rag_prompt.txt     # System Prompt for the RAG Sub-Agent
+├── root_prompt.txt    # System Prompt for the Main Tutor Agent
+├── requirements.txt   # List of Python dependencies
+└── README.md          # Project Documentation
+```
